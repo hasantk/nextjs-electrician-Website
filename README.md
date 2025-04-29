@@ -29,14 +29,6 @@ Bu proje, **elektrik hizmetleri sunan firmalar** için geliştirilmiş, modern v
 - Kayan bilgilendirme panelleri
 - SEO için optimize edilmiş sayfalar
 
----
-
-## 📸 Ön İzleme
-
-> (Buraya proje ekran görüntüsü veya video gif ekleyebilirsiniz)
-
----
-
 ## 🚀 Kurulum ve Başlatma
 
 1. **Projeyi klonlayın:**
