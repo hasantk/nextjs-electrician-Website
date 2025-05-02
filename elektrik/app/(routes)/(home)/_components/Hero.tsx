@@ -1,12 +1,7 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
-// import required modules
 import { slides } from "@/constans";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
@@ -16,7 +11,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <div className="relative bg-[url('/slider/bgswipe.jpg')] bg-cover py-16">
+    <div className="relative bg-[url('/slider/bgswipe.jpg')] bg-cover bg-center py-16">
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
         {/* Left */}
         <div className="lg:w-1/2 space-y-6 text-center lg:text-left px-6 transition-all duration-500">
@@ -41,24 +36,22 @@ const Hero = () => {
               delay: 3500,
               disableOnInteraction: false,
             }}
-            pagination={{
-              dynamicBullets: true,
-            }}
+            pagination={{ dynamicBullets: true }}
             navigation={true}
-            loop={true} // Bittiğinde başa dönsün
+            loop={true}
             modules={[Autoplay, Pagination, Navigation]}
             className="w-full"
             onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
           >
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="relative rounded-3xl overflow-hidden">
+                <div className="relative rounded-3xl overflow-hidden w-full min-h-[230px] sm:min-h-[460px] max-h-[50vh]">
                   <Image
                     src={slide.image}
                     alt={slide.title}
-                    width={300}
-                    height={425}
-                    className="w-full h-auto object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </SwiperSlide>

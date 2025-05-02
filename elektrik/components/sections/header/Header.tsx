@@ -28,7 +28,7 @@ const Header = () => {
       {/* Top Bar */}
       <div className="flex container mx-auto h-16 justify-center md:justify-between items-center px-4 py-2 text-sm">
         <div className="flex items-center gap-5">
-          <div className="flex gap-3 items-center">
+          <div className="hidden sm:flex gap-3 items-center">
             <div className="bg-white p-2 rounded-full">
               <MessageCircle size={12} className="text-red-500" />
             </div>
