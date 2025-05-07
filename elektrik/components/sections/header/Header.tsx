@@ -1,28 +1,35 @@
+"use client";
 import React from "react";
 import {
   Facebook,
   Instagram,
-  Menu,
   MessageCircle,
   Phone,
-  Search,
   Twitter,
-  User,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { navigationLinks } from "@/constans";
 import MobileMenu from "./MobileMenu";
 import SearchPage from "./Search";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
+  const [position, setPosition] = React.useState("bottom");
+  const pathname = usePathname();
   const socialLinks = [
     { href: "#", icon: <Facebook size={16} /> },
     { href: "#", icon: <Twitter size={16} /> },
     { href: "#", icon: <Instagram size={16} /> },
   ];
-
   return (
     <header className="bg-black text-white">
       {/* Top Bar */}
@@ -34,7 +41,6 @@ const Header = () => {
             </div>
             iletisim@izniksabitelektrik.com
           </div>
-
           <div className="flex gap-3 items-center">
             <div className="bg-white p-2 rounded-full">
               <Phone size={12} className="text-red-500" />
@@ -42,7 +48,6 @@ const Header = () => {
             +90 539 598 0668
           </div>
         </div>
-
         <div className="hidden md:flex items-center space-x-4">
           {socialLinks.map((link, index) => (
             <Link key={index} href={link.href} className="hover:text-red-500">
@@ -51,9 +56,7 @@ const Header = () => {
           ))}
         </div>
       </div>
-
       {/** Navigation Bar */}
-
       <div className="bg-white h-28 text-black shadow flex items-center">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <Link href={"/"}>
@@ -65,15 +68,99 @@ const Header = () => {
               className="w-32 lg:w-48 h-auto z-1"
             />
           </Link>
-
           <nav className="hidden lg:flex space-x-8 text-lg font-semibold">
-            {navigationLinks.map((link, index) => (
-              <Link key={index} href={link.href} className="hover:text-red-500">
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href={"/"}
+              className={`${
+                pathname === "/" ? "text-red-500" : "hover:text-red-500"
+              }`}
+            >
+              {"Anasayfa"}
+            </Link>
+            <Link
+              href={"/kurumsal"}
+              className={`${
+                pathname === "/kurumsal" ? "text-red-500" : "hover:text-red-500"
+              }`}
+            >
+              {"Kurumsal"}
+            </Link>
+            {/* Hizmetler Dropdown Menü */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Link
+                  href={"/hizmetlerimiz"}
+                  className={`${
+                    pathname === "hizmetlerimiz"
+                      ? "text-red-500"
+                      : "hover:text-red-500"
+                  }`}
+                >
+                  Hizmetlerimiz
+                </Link>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Hizmet Kategorileri</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link
+                    href={"/hizmetlerimiz/aydinlatma-cozumleri"}
+                    className={`${
+                      pathname === "/hizmetlerimiz/aydinlatma-cozumleri"
+                        ? "text-red-500"
+                        : "hover:text-red-500"
+                    }`}
+                  >
+                    Aydınlatma Çözümleri
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href={"/hizmetlerimiz/elektrik-ariza-onarim"}
+                    className={`${
+                      pathname === "/hizmetlerimiz/elektrik-ariza-onarim"
+                        ? "text-red-500"
+                        : "hover:text-red-500"
+                    }`}
+                  >
+                    Elektrik Arıza Onarımı
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href={"/hizmetlerimiz/elektrik-tesisat-kurulumu"}
+                    className={`${
+                      pathname === "/hizmetlerimiz/elektrik-tesisat-kurulumu"
+                        ? "text-red-500"
+                        : "hover:text-red-500"
+                    }`}
+                  >
+                    Elektrik Tesisatı Kurulumu
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href={"/hizmetlerimiz/avize"}
+                    className={`${
+                      pathname === "/hizmetlerimiz/avize"
+                        ? "text-red-500"
+                        : "hover:text-red-500"
+                    }`}
+                  >
+                    Avize
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link
+              href={"/iletisim"}
+              className={`${
+                pathname === "/iletisim" ? "text-red-500" : "hover:text-red-500"
+              }`}
+            >
+              {"İletişim"}
+            </Link>
           </nav>
-
           <div className="flex items-center space-x-4">
             <SearchPage />
             <Button className="hidden lg:flex bg-red-500 hover:bg-red-600 w-40 h-15 font-semibold text-base rounded-lg">
@@ -88,5 +175,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;

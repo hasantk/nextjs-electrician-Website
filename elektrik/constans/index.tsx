@@ -1,10 +1,3 @@
-export const navigationLinks = [
-  { href: "/", label: "Anasayfa" },
-  { href: "/kurumsal", label: "Kurumsal" },
-  { href: "/hizmetlerimiz", label: "Hizmetlerimiz" },
-  { href: "/iletisim", label: "İletişim" },
-];
-
 export const slides = [
   {
     image: "/slider/1.jpg",

@@ -1,9 +1,7 @@
 "use client";
-import About from "./_components/About";
 import Hero from "./_components/Hero";
 import Referance from "./_components/Referance";
 import SectionOne from "./_components/Section/SectionOne";
-import SectionTwo from "./_components/Section/SectionTwo";
 import Service from "./_components/Service";
 
 export default function Home() {
@@ -16,8 +14,6 @@ export default function Home() {
       <SectionOne />
       <div className="min-h-[56px]"></div>
       <Referance />
-      <div className="min-h-[56px]"></div>
-      <About />
       <div className="min-h-[250px]"></div>
     </>
   );

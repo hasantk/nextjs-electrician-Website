@@ -34,5 +34,4 @@ const SearchPage = () => {
     </Dialog>
   );
 };
-
 export default SearchPage;

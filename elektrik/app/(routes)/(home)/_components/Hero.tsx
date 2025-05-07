@@ -28,7 +28,6 @@ const Hero = () => {
             {slides[currentSlide].buttonText}
           </Button>
         </div>
-
         {/* Right */}
         <div className="lg:w-1/2 mt-12 lg:mt-0 w-full">
           <Swiper

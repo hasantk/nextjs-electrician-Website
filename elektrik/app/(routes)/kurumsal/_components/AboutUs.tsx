@@ -1,41 +1,32 @@
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="bg-red-100">
-      <div className="mx-auto container text-center py-16 px-16 lg:px-28">
-        <h2 className="text-2xl lg:text-4xl font-bold text-blue-600 mb-4">
-          Welcome
-        </h2>
-        <div className="flex justify-center items-center mb-6">
-          <hr className="border-gray-300 w-1/5" />
-          <span className="mx-3 text-gray-400 text-xl">&#128064;</span>
-          <hr className="border-gray-300 w-1/5" />
+    <div className="container mx-auto px-4 mt-[50px]">
+      <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="w-full">
+          <span className="font-semibold mb-5 block">İznik Sabit Elektrik</span>
+          <h3 className="font-semibold text-4xl sm:text-5xl mb-[35px]">
+            Kurumsal
+          </h3>
+          <p>
+            İznik Sabit Elektrik, elektrik alanında uzman kadrosu ve yıllara
+            dayanan tecrübesiyle müşterilerine profesyonel çözümler sunmaktadır.
+            Kaliteli malzeme kullanımı, güvenlik odaklı yaklaşımı ve zamanında
+            teslim anlayışı ile sektörde güven kazanmıştır. Hem bireysel hem de
+            kurumsal projelerde ihtiyaçlara özel çözümler sunarak müşteri
+            memnuniyetini ön planda tutmaktadır.
+          </p>
         </div>
-        <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsum
-          consequatur expedita sint, labore suscipit, dolores voluptatum odit a
-          totam dolorum inventore eveniet necessitatibus excepturi rerum! Fuga
-          nostrum ipsam qui commodi cupiditate ut dignissimos quas accusamus,
-          quibusdam vel in unde non sed! Atque laboriosam dolorum explicabo
-          aspernatur hic vero natus.
-        </p>
-        <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsum
-          consequatur expedita sint, labore suscipit, dolores voluptatum odit a
-          totam dolorum inventore eveniet necessitatibus excepturi rerum! Fuga
-          nostrum ipsam qui commodi cupiditate ut dignissimos quas accusamus,
-          quibusdam vel in unde non sed! Atque laboriosam dolorum explicabo
-          aspernatur hic vero natus.
-        </p>
-        <div className="flex justify-center gap-4">
-          <Button className="bg-green-500 text-white py-6 px-8 rounded-lg hover:bg-green-600 transition">
-            Detail
-          </Button>
-          <Button className="bg-red-500 text-white py-6 px-8 rounded-lg hover:bg-red-600 transition">
-            Browse
-          </Button>
+        <div className="flex justify-center group overflow-hidden relative">
+          <Image
+            src="/galeri/6.png"
+            alt="İznik Elektrik"
+            width={350} // width ve height burada gereksiz, Tailwind ile kontrol sağlanıyor
+            height={320}
+            className="w-full h-auto max-w-[90%] sm:max-w-[400px] rounded-xl transition duration-300 group-hover:scale-110"
+          />
         </div>
       </div>
     </div>

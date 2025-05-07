@@ -1,5 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { navigationLinks } from "@/constans";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,16 +52,42 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="text-xl font-bold mb-4 mt-15">Site Haritası</h4>
-          <div className="space-y-2 text-sm text-gray-400">
-            {navigationLinks.map((link, index) => (
-              <Link
-                key={index}
-                href={link.href}
-                className="block hover:text-red-500"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex flex-col space-y-2 text-sm text-gray-400">
+            <Link href={"/"} className={"hover:text-red-500"}>
+              {"Anasayfa"}
+            </Link>
+            <Link href={"/kurumsal"} className={"hover:text-red-500"}>
+              {"Kurumsal"}
+            </Link>
+            {/* Hizmetler Accordion Menü */}
+            <Accordion type="single" collapsible className="w-[50] -mt-4 -mb-1">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Hizmetlerimiz</AccordionTrigger>
+                <div className="w-[150]">
+                  <AccordionContent className="hover:text-red-500">
+                    <Link href="/hizmetlerimiz/aydinlatma-cozumleri">
+                      Aydınlatma Çözümleri
+                    </Link>
+                  </AccordionContent>
+                  <AccordionContent className="hover:text-red-500">
+                    <Link href="/hizmetlerimiz/elektrik-ariza-onarim">
+                      Elektrik Arıza Onarım
+                    </Link>
+                  </AccordionContent>
+                  <AccordionContent className="hover:text-red-500">
+                    <Link href="/hizmetlerimiz/elektrik-tesisat-kurulumu">
+                      Elektrik Tesisat Kurulumu
+                    </Link>
+                  </AccordionContent>
+                  <AccordionContent className="hover:text-red-500">
+                    <Link href="/hizmetlerimiz/avize">Avize</Link>
+                  </AccordionContent>
+                </div>
+              </AccordionItem>
+            </Accordion>
+            <Link href={"/iletisim"} className={"hover:text-red-500"}>
+              {"İletişim"}
+            </Link>
           </div>
         </div>
         <div className="lg:col-span-2 mt-15">
@@ -112,5 +143,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
