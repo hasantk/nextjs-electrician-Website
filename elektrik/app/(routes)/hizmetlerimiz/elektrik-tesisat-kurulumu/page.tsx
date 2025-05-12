@@ -1,7 +1,16 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
 import Image from "next/image";
+import "aos/dist/aos.css";
 
 const TesisatPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animasyon süresi (ms)
+      once: true, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+    });
+  }, []);
   return (
     <div className="container mx-auto px-4 mt-[50px]">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -21,7 +30,10 @@ const TesisatPage = () => {
             kaliteli tesisat kurulumu için doğru adres: İznik Sabit Elektrik.
           </p>
         </div>
-        <div className="flex justify-center group overflow-hidden relative aspect-[3/4] max-h-[500px]">
+        <div
+          className="flex justify-center group overflow-hidden relative aspect-[3/4] max-h-[500px]"
+          data-aos="zoom-in"
+        >
           <Image
             src="/galeri/4.png"
             alt="İznik Elektrik"

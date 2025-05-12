@@ -1,7 +1,17 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
 
 const AydinlatmaPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animasyon süresi (ms)
+      once: true, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+    });
+  }, []);
+
   return (
     <div className="container mx-auto px-4 mt-[50px]">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -22,7 +32,10 @@ const AydinlatmaPage = () => {
             Sabit Elektrik doğru adres!
           </p>
         </div>
-        <div className="flex justify-center group overflow-hidden relative aspect-[3/4] max-h-[500px]">
+        <div
+          className="flex justify-center group overflow-hidden relative aspect-[3/4] max-h-[500px]"
+          data-aos="zoom-in"
+        >
           <Image
             src="/galeri/6.png"
             alt="İznik Elektrik"

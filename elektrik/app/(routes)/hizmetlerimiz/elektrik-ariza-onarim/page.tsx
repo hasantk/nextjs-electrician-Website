@@ -1,7 +1,16 @@
-import React from "react";
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
 import Image from "next/image";
+import "aos/dist/aos.css";
 
 const ArizaPage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animasyon süresi (ms)
+      once: true, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+    });
+  }, []);
   return (
     <div className="container mx-auto px-4 mt-[50px]">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -29,6 +38,7 @@ const ArizaPage = () => {
             alt="İznik Elektrik"
             fill
             className="object-cover rounded-xl transition duration-300 group-hover:scale-110"
+            data-aos="zoom-in"
           />
         </div>
       </div>

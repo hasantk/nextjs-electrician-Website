@@ -8,7 +8,7 @@ const AboutUs = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animasyon süresi (ms)
-      once: false, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+      once: true, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
     });
   }, []);
 

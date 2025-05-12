@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -16,6 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import dynamic from "next/dynamic";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), {
   ssr: false,
@@ -34,6 +36,13 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animasyon süresi (ms)
+      once: false, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+    });
+  }, []);
+
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -58,7 +67,12 @@ const ContactForm = () => {
   }
   return (
     <div>
-      <div className="grid grid-row sm:grid-cols-2 max-w-4xl mx-auto p-6 gap-[50] shadow-xl border-gray-100 border-[0.20] mt-[80]">
+      <div
+        className="grid grid-row sm:grid-cols-2 max-w-4xl mx-auto p-6 gap-[50] shadow-xl border-gray-100 border-[0.20] mt-[80]"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <div className="flex flex-col font-serif">
           <span className=" text-center text-2xl">İletişim</span>
           <div className="flex flex-col mt-[20]">
