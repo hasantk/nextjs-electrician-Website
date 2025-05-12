@@ -34,7 +34,7 @@ const AboutUs = () => {
           data-aos="fade-left"
         >
           <Image
-            src="/galeri/6.png"
+            src="/galeri/4.png"
             alt="İznik Elektrik"
             width={350} // width ve height burada gereksiz, Tailwind ile kontrol sağlanıyor
             height={320}

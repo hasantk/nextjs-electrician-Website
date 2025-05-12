@@ -13,7 +13,7 @@ import "aos/dist/aos.css";
 
 const Footer = () => {
   const galeriImages = Array.from(
-    { length: 5 },
+    { length: 6 },
     (_, index) => `/galeri/${index + 1}.png`
   );
 
@@ -45,7 +45,6 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div></div>
       <div className="container mx-auto py-56 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-8">
         <div className="lg:col-span-2 mt-15">
           <h3 className="text-2xl font-bold">Sabit Elektrik</h3>
@@ -96,16 +95,16 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:col-span-2 mt-15">
-          <h3 className="text-2xl font-bold">Galeri</h3>
-          <div className="grid grid-cols-3 gap-2">
+          <h3 className="text-2xl font-bold ">Galeri</h3>
+          <div className="grid grid-cols-3 gap-2 mt-[12]">
             {" "}
             {/* 3 tane yan yana resim gelcek */}
             {galeriImages.map((src, index) => (
               <Image
                 key={index}
                 src={src}
-                width={50}
-                height={50}
+                width={150}
+                height={150}
                 alt="İznik sabit elektrik"
                 className="w-full h-auto"
               />
