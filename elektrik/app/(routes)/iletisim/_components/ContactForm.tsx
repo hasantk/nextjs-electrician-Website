@@ -1,5 +1,5 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import React, { useState, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import dynamic from "next/dynamic";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -36,6 +35,9 @@ const formSchema = z.object({
 });
 
 const ContactForm = () => {
+  const MapEmbed = dynamic(() => import("./Harita"), {
+    ssr: false,
+  });
   useEffect(() => {
     AOS.init({
       duration: 1000, // animasyon süresi (ms)
@@ -157,15 +159,7 @@ const ContactForm = () => {
           </Form>
         </div>
       </div>
-      <div className="w-full h-[550px] mt-[60] sm:mt-[100]">
-        <iframe
-          className="w-full h-full border-0"
-          loading="lazy"
-          allowFullScreen
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.7269690085485!2d29.71794821524679!3d40.42999797936242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cbd0be037b5e4f%3A0xf5a1b6ea354de9ac!2zVG9wa2FwxLEgQ2FkZGVzaSwgWWXFn2lsIENhbWlpIE1oLiwgSXPFn2lrL0J1cnNh!5e0!3m2!1str!2str!4v1683721351234!5m2!1str!2str"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+      <MapEmbed />
     </div>
   );
 };

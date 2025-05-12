@@ -69,22 +69,22 @@ const Footer = () => {
                 <AccordionTrigger>Hizmetlerimiz</AccordionTrigger>
                 <div className="w-[150]">
                   <AccordionContent className="hover:text-red-500">
-                    <Link href="/hizmetlerimiz/aydinlatma-cozumleri">
+                    <Link href="/hizmetlerimiz/iznik-aydinlatma-cozumleri">
                       Aydınlatma Çözümleri
                     </Link>
                   </AccordionContent>
                   <AccordionContent className="hover:text-red-500">
-                    <Link href="/hizmetlerimiz/elektrik-ariza-onarim">
+                    <Link href="/hizmetlerimiz/iznik-elektrik-ariza-onarim">
                       Elektrik Arıza Onarım
                     </Link>
                   </AccordionContent>
                   <AccordionContent className="hover:text-red-500">
-                    <Link href="/hizmetlerimiz/elektrik-tesisat-kurulumu">
+                    <Link href="/hizmetlerimiz/iznik-elektrik-tesisat-kurulumu">
                       Elektrik Tesisat Kurulumu
                     </Link>
                   </AccordionContent>
                   <AccordionContent className="hover:text-red-500">
-                    <Link href="/hizmetlerimiz/avize">Avize</Link>
+                    <Link href="/hizmetlerimiz/iznik-avize">Avize</Link>
                   </AccordionContent>
                 </div>
               </AccordionItem>

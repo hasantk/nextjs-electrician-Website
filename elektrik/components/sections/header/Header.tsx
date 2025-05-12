@@ -104,9 +104,9 @@ const Header = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link
-                    href={"/hizmetlerimiz/aydinlatma-cozumleri"}
+                    href={"/hizmetlerimiz/iznik-aydinlatma-cozumleri"}
                     className={`${
-                      pathname === "/hizmetlerimiz/aydinlatma-cozumleri"
+                      pathname === "/hizmetlerimiz/iznik-aydinlatma-cozumleri"
                         ? "text-red-500"
                         : "hover:text-red-500"
                     }`}
@@ -116,9 +116,9 @@ const Header = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link
-                    href={"/hizmetlerimiz/elektrik-ariza-onarim"}
+                    href={"/hizmetlerimiz/iznik-elektrik-ariza-onarim"}
                     className={`${
-                      pathname === "/hizmetlerimiz/elektrik-ariza-onarim"
+                      pathname === "/hizmetlerimiz/iznik-elektrik-ariza-onarim"
                         ? "text-red-500"
                         : "hover:text-red-500"
                     }`}
@@ -128,9 +128,10 @@ const Header = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link
-                    href={"/hizmetlerimiz/elektrik-tesisat-kurulumu"}
+                    href={"/hizmetlerimiz/iznik-elektrik-tesisat-kurulumu"}
                     className={`${
-                      pathname === "/hizmetlerimiz/elektrik-tesisat-kurulumu"
+                      pathname ===
+                      "/hizmetlerimiz/iznik-elektrik-tesisat-kurulumu"
                         ? "text-red-500"
                         : "hover:text-red-500"
                     }`}
@@ -140,9 +141,9 @@ const Header = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link
-                    href={"/hizmetlerimiz/avize"}
+                    href={"/hizmetlerimiz/iznik-avize"}
                     className={`${
-                      pathname === "/hizmetlerimiz/avize"
+                      pathname === "/hizmetlerimiz/iznik-avize"
                         ? "text-red-500"
                         : "hover:text-red-500"
                     }`}
