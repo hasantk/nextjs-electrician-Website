@@ -1,7 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // animasyon süresi (ms)
+      once: false, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+    });
+  }, []);
+
   return (
     <div className="container mx-auto px-4 mt-[50px]">
       <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -19,7 +29,10 @@ const AboutUs = () => {
             memnuniyetini ön planda tutmaktadır.
           </p>
         </div>
-        <div className="flex justify-center group overflow-hidden relative">
+        <div
+          className="flex justify-center group overflow-hidden relative"
+          data-aos="fade-left"
+        >
           <Image
             src="/galeri/6.png"
             alt="İznik Elektrik"

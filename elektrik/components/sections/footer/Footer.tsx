@@ -9,6 +9,7 @@ import { MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import "aos/dist/aos.css";
 
 const Footer = () => {
   const galeriImages = Array.from(
@@ -30,7 +31,11 @@ const Footer = () => {
             </Button>
           </Link>
         </div>
-        <div className="flex justify-center relative">
+        <div
+          className="flex justify-center relative"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+        >
           <Image
             height={426}
             width={536}
