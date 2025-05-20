@@ -1,6 +1,6 @@
 export const siteMetadata = 
 {
-    title: 'İznik Sabit Elektrik | Elektrikçi Adem',
+    title: 'İznik Sabit Elektrik | Elektrikçi Adem ile Güvenli ve Hızlı Hizmet',
     author: 'Elektrikci Adem',
     headerTitle: 'İznik Sabit Elektrik',
     description: 'İznik Sabit Elektrik; elektrik tesisatı, arıza, bakım ve taahhüt hizmetlerinde uzman kadrosuyla kaliteli ve güvenilir çözümler sunar. Uygun fiyat, hızlı servis, müşteri memnuniyeti önceliğimizdir.',
