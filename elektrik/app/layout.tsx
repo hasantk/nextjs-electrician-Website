@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteMetadata } from "@/lib/siteMetadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "İznik Sabit Elektrik",
-  description:
-    "İznik Sabit Elektrik; elektrik tesisatı, arıza, bakım ve taahhüt hizmetlerinde uzman kadrosuyla kaliteli ve güvenilir çözümler sunar. Uygun fiyat, hızlı servis, müşteri memnuniyeti önceliğimizdir.",
+  title: {
+    template: `%s | ${siteMetadata.title}`,
+    default: siteMetadata.title,
+  },
+  description: siteMetadata.description,
+  openGraph: {
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: siteMetadata.siteUrl,
+    siteName: siteMetadata.title,
+    images: [siteMetadata.socialBanner],
+    locale: "en_US",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteMetadata.title,
+    images: [siteMetadata.socialBanner],
+  },
 };
 
 export default function RootLayout({

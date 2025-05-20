@@ -4,11 +4,11 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const service = () => {
+const Service = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // animasyon süresi (ms)
-      once: false, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
+      once: true, // bir kez oynasın (scroll ile tekrar tetiklenmesin)
     });
   }, []);
 
@@ -83,4 +83,4 @@ const service = () => {
   );
 };
 
-export default service;
+export default Service;

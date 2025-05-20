@@ -53,6 +53,7 @@ const ContactForm = () => {
       email: "",
       message: "",
       recaptcha: "",
+      recaptchaToken: "",
     },
   });
 
