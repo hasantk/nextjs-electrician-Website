@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Instagram, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import React from "react";
 
 const SearchPage = () => {

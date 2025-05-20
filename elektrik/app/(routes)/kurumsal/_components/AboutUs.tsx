@@ -12,13 +12,14 @@ export const metadata: Metadata = {
     default: siteMetadata.title,
   },
   description: siteMetadata.description,
+  metadataBase: new URL(siteMetadata.siteUrl),
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
     images: [siteMetadata.socialBanner],
-    locale: "en_US",
+    locale: "tr_TR",
     type: "website",
   },
 

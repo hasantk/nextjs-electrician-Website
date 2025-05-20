@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CountUp, { useCountUp } from "react-countup";
+import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 const ElektrikStats = () => {

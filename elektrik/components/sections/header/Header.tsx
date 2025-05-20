@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
-  const [position, setPosition] = React.useState("bottom");
+  // const [position, setPosition] = React.useState("bottom");
   const pathname = usePathname();
   const socialLinks = [
     { href: "#", icon: <Facebook size={16} /> },
